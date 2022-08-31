@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     const expensesList = document.querySelector('#expenses-list')
     const totalExpensesAmount = document.querySelector('#total-expenses-amount')
     const balanceAmount = document.querySelector('#balance-amount')
-    let total;
+    
     
     
     
@@ -45,7 +45,11 @@ document.addEventListener("DOMContentLoaded", () =>{
         })
         const fetchAmount = () => {
             totalIncome.then((totalIncome) => {
-                balanceAmount.innerHTML=totalIncome - calculateExpenses()
+                balanceAmount.innerHTML=totalIncome - totalExpensesAmount.innerHTML
+                if (balanceAmount.innerHTML < 0){
+                    alert('Your income has run out')
+                    balanceAmount.innerHTML = 'error'
+                }
             //   console.log(totalIncome);
             });
         };
@@ -58,10 +62,11 @@ document.addEventListener("DOMContentLoaded", () =>{
                 let total = parseInt(totalExpensesAmount.innerHTML) + expense;
                 return total;
             }
-            // console.log(calculateExpenses())
+            
         
             // Display accumulated prices
         totalExpensesAmount.innerHTML = calculateExpenses()
+        
             
         // Condition to check that expense category name is not empty
         if(expensesCategory.value === 0 || expensesCategory.value === ''){
