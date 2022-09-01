@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     const expensesCategory = document.querySelector('#expenses-name')
     const expensesAmount = document.querySelector('#expenses-amount')
     const expensesList = document.querySelector('#expenses-list')
+    const amountList = document.querySelector('#amount-list')
     const totalExpensesAmount = document.querySelector('#total-expenses-amount')
     const balanceAmount = document.querySelector('#balance-amount')
     
@@ -27,17 +28,23 @@ document.addEventListener("DOMContentLoaded", () =>{
             amountErrorMessage.classList.remove('hide')
         }else {
             amountErrorMessage.classList.add('hide')
+            const amount = document.createElement('p')
+            amount.textContent = expensesAmount.value
+            amountList.appendChild(amount);
             calculateExpenses()
             }
     
         // Fetch income from income.json
     
-        const incomeLink = 'http://localhost:3000/income'
+        const incomeLink = 'https://annastacia-dev.github.io/income-api/income.json'
+        // console.log(incomeLink)
     
         const totalIncome = fetch(incomeLink)
         .then(res => res.json())
         .then (json => {
-            let incomeAmount = Object.values(json)
+            let objectArray = json.income
+            let incomeAmount = Object.values(objectArray)
+            // console.log(incomeAmount)
             const reducer = (accumulator, curr) => accumulator + curr;
             let totalIncome= incomeAmount.reduce(reducer)
             // console.log(totalIncome)
@@ -49,6 +56,9 @@ document.addEventListener("DOMContentLoaded", () =>{
                 if (balanceAmount.innerHTML < 0){
                     alert('Your income has run out')
                     balanceAmount.innerHTML = 'error'
+                    totalExpensesAmount.innerHTML = 'error'
+                    
+
                 }
             //   console.log(totalIncome);
             });

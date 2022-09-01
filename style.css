@@ -9,18 +9,20 @@
 }
 
 body{
-    background-color:antiquewhite;
+    background-image:url(images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover; 
     color: rgb(36, 21, 2);
 }
 
 #logo{
-    text-decoration: underline;
-    text-decoration-thickness: 0.25em;
-    font-family: 'DynaPuff', cursive;
     margin: 1em auto;
     max-width: 5em;
     padding-top: 2em;
     color: rgb(110, 67, 10)
+    position
     
 }
 
@@ -38,10 +40,10 @@ body{
 
 .input-form {
     display: grid;
-    background-color: rgb(252, 244, 233);
+    background-color: rgba(252, 244, 233, 0.5);
     padding: 1.25em 0.9em;
     border-radius: 0.3em;
-    box-shadow: 0 0.6em 1.2em rgba(28, 0, 80, 0.06);
+    box-shadow: 0 0.6em 1.2em rgba(0, 0, 0, 0.2);
 }
 
 .input-form h3 {
@@ -91,18 +93,41 @@ span{
 }
 
 #lists{
-    display: flex;
+    display: grid;
     background-color: rgb(252, 244, 233);
     padding: 1.25em 0.9em;
     border-radius: 0.3em;
     margin-left: 2em;
 }
 
+#lists-table  {
+    margin-top: 2em;
+    width: 100%;
+    
+}
+
+tr th {
+    position: sticky;
+}
+
 #expenses-list{
 
-    display: block;
-    padding-top: 3em;
-    margin-left: -5em;
+    
+    padding-top: 1em;
+    padding-left: 7em;
+   
+    
+    
+    
+    
+}
+#amount-list{
+
+    
+    padding-top: 1em;
+    padding-left: 8em;
+    
+    
     
     
 }
