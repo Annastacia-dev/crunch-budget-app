@@ -3,7 +3,7 @@
 # Author - Annastacia Kioko
 
 # Description
-Crunch budget app is an expense tracker that fetches income data from an income API
+Crunch app is an expense tracker that fetches income data from an income API
 The User enters a category name for their expense, then enters an amount for that expense.
 Every expense entry is accumulated and subtracted from the income displaying the balance,
 so the user can know how much they have left.

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 
 
-    const expensesForm = document.querySelector('#expenses')
+    
     const categoryErrorMessage = document.querySelector('#expenses-category-error')
     const amountErrorMessage = document.querySelector('#expenses-amount-error')
     const expensesButton = document.querySelector('#expenses-button')
@@ -23,18 +23,20 @@ document.addEventListener("DOMContentLoaded", () =>{
         e.preventDefault()
         
     
-        // Condition to ensure expense amount is not empty or less than 0
+        // Condition to ensure expense amount is not empty or less than 0 then append amount to list
     
         if(expensesAmount.value < 0 || expensesAmount.value === '' ){
             amountErrorMessage.classList.remove('hide')
         }else {
             amountErrorMessage.classList.add('hide')
-            
             const amount = document.createElement('p')
             amount.textContent = `${expensesAmount.value}`
             amountList.appendChild(amount);
             calculateExpenses()
+            // expensesAmount.value = ''
             }
+            
+            
             
     
         // Fetch income from income.json
@@ -82,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         
             
         // Condition to check that expense category name is not empty
-        if(expensesCategory.value === 0 || expensesCategory.value === ''){
+        if( /^[a-zA-Z]+$/.test(expensesCategory.value) === false || expensesCategory.value === ''){
             categoryErrorMessage.classList.remove('hide')
         }else {
                 appendExpense()
@@ -94,7 +96,9 @@ document.addEventListener("DOMContentLoaded", () =>{
             const list = document.createElement('li')
             list.textContent = expensesCategory.value
             expensesList.appendChild(list);
+            
         }
+        // expensesCategory.value = ''
         }
     })
 
