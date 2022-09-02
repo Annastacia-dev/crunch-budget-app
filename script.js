@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () =>{
             amount.textContent = `${expensesAmount.value}`
             amountList.appendChild(amount);
             calculateExpenses()
-            // expensesAmount.value = ''
+            
+            
             }
             
             
@@ -42,22 +43,23 @@ document.addEventListener("DOMContentLoaded", () =>{
         // Fetch income from income.json
     
         const incomeLink = 'https://annastacia-dev.github.io/income-api/income.json'
-        // console.log(incomeLink)
+       
     
         const totalIncome = fetch(incomeLink)
         .then(res => res.json())
         .then (json => {
             let objectArray = json.income
             let incomeAmount = Object.values(objectArray)
-            // console.log(incomeAmount)
+           
             const reducer = (accumulator, curr) => accumulator + curr;
             let totalIncome= incomeAmount.reduce(reducer)
-            // console.log(totalIncome)
+            
             return totalIncome
         })
         const fetchAmount = () => {
             totalIncome.then((totalIncome) => {
                 balanceAmount.innerHTML=totalIncome - totalExpensesAmount.innerHTML
+                expensesAmount.value = ''
                 if (balanceAmount.innerHTML < 0){
                     alert('Your income has run out')
                     balanceAmount.innerHTML = 'error'
@@ -65,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                     
 
                 }
-            //   console.log(totalIncome);
+            
             });
         };
         fetchAmount()
@@ -96,9 +98,10 @@ document.addEventListener("DOMContentLoaded", () =>{
             const list = document.createElement('li')
             list.textContent = expensesCategory.value
             expensesList.appendChild(list);
+            expensesCategory.value = ''
             
         }
-        // expensesCategory.value = ''
+        
         }
     })
 

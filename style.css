@@ -117,8 +117,7 @@ tr th {
 #expenses-list{
 
     
-    padding-top: 1em;
-    padding-left: 7em;
+    padding: 1em 7em;
    
     
     
@@ -128,8 +127,7 @@ tr th {
 #amount-list{
 
     
-    padding-top: 1em;
-    padding-left: 8em;
+    padding: 1em 8em;
     
     
     
