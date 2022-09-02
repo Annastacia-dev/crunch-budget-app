@@ -28,8 +28,9 @@ document.addEventListener("DOMContentLoaded", () =>{
             amountErrorMessage.classList.remove('hide')
         }else {
             amountErrorMessage.classList.add('hide')
+            
             const amount = document.createElement('p')
-            amount.textContent = expensesAmount.value
+            amount.textContent = `${expensesAmount.value}`
             amountList.appendChild(amount);
             calculateExpenses()
             }
