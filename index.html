@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css"/>
+    <title>Crunch</title>
+    <!-- Logo -->
+
+   <div id="logo">
+
+     <img src="/images/crunch-logo.png" alt="crunch app logo" width="120px" />
+
+    <!-- <h3><b>crunch</b></h3> -->
+
+   </div>
+</head>
+<body>
+
+    <div id='container'>
+
+         <!--Inputs  -->
+
+        <div id="inputs">
+
+            <!-- Expenses Input -->
+
+        <form id="expenses" class="input-form">
+                <h3>Expenses</h3>
+                <br>
+                <p class="hide error" id="expenses-category-error">Category cannot be a number or empty!</p>
+                <input id="expenses-name" type="text" placeholder="Enter expense category"/>
+                <br>
+                <p class="hide error" id="expenses-amount-error">Amount cannot be blank or negative!</p>
+                <input id="expenses-amount" type="number" placeholder="Enter amount"/>
+                <br>
+               
+                <br>
+                <button type="submit" id="expenses-button" class="button">Add Expense</button>
+        </form>
+        </div>
+        
+
+        <!-- Outputs -->
+
+        <div id="outputs">
+
+            <div id="total-expenses-output">
+                    <h5>Total expenses</h5>
+                    <span id="total-expenses-amount">0</span>
+            </div>
+            <div id="balance-output">
+                    <h5>Balance</h5>
+                    <span id="balance-amount">0</span>
+            </div>
+        </div>
+
+        <!-- Lists -->
+
+        <div id="lists">
+            <div>
+                <table id="lists-table">
+                    <tr>
+                      <th>Expenses List</th>
+                      <th>Amount</th>
+                            
+                    </tr>
+                    <tr>
+                        <td id="expenses-list"></td>
+                        <td  id="amount-list"></td>
+                    </tr>
+                </table>
+            
+            
+        </div>
+
+    </div>
+<script src="/script.js "></script>
+</body>
+</html>
