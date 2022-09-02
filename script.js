@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     function addToList(e){
         e.preventDefault()
+        
     
         // Condition to ensure expense amount is not empty or less than 0
     
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             amountList.appendChild(amount);
             calculateExpenses()
             }
+            
     
         // Fetch income from income.json
     
