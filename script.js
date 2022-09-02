@@ -36,10 +36,6 @@ document.addEventListener("DOMContentLoaded", () =>{
             
             
             }
-            
-            
-            
-    
         // Fetch income from income.json
     
         const incomeLink = 'https://annastacia-dev.github.io/income-api/income.json'
@@ -64,8 +60,6 @@ document.addEventListener("DOMContentLoaded", () =>{
                     alert('Your income has run out')
                     balanceAmount.innerHTML = 'error'
                     totalExpensesAmount.innerHTML = 'error'
-                    
-
                 }
             
             });
